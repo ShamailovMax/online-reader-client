@@ -1,4 +1,5 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { useState } from "react";
 
 const style = {
   width: "40vw",
@@ -10,6 +11,31 @@ const style = {
 // todo: сделать валидацию в сервере
 
 export const Registration = () => {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordRe, setPasswordRe] = useState("");
+  const handleOnSubmit = async (e) => {
+    if (password !== passwordRe) {
+      alert("Password dont равны");
+      return;
+    }
+    e.preventDefault();
+    let result = await fetch("http://localhost:5000/register", {
+      method: "post",
+      body: JSON.stringify({ name, password }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    result.text().then(function (result_text) {
+      if (result_text === "reg_error") {
+        alert("User regeady register!");
+      } else {
+        alert("User register!");
+      }
+    });
+  };
+
   return (
     <>
       <Container style={style}>
@@ -17,10 +43,25 @@ export const Registration = () => {
         <p>Чтобы войти в систему, введите свой email и придумайте пароль</p>
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Control type="email" placeholder="Введите email" />
+            <Form.Control
+              type="email"
+              placeholder="Введите email"
+              onChange={(e) => setName(e.target.value)}
+            />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicPassword">
-            <Form.Control type="password" placeholder="Придумайте пароль" />
+            <Form.Control
+              type="password"
+              placeholder="Придумайте пароль"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicPasswordRe">
+            <Form.Control
+              type="password"
+              placeholder="Повторите пароль"
+              onChange={(e) => setPasswordRe(e.target.value)}
+            />
             <Form.Text className="text-muted">
               Мы никому не сообщим Ваши личные данные.
             </Form.Text>
@@ -33,11 +74,16 @@ export const Registration = () => {
                 style={{ width: "100%", color: "#262525" }}
                 variant="light"
               >
-                Есть аккаунт?
+                Войти
               </Button>
             </Col>
             <Col>
-              <Button style={{ width: "100%" }} variant="primary" type="submit">
+              <Button
+                style={{ width: "100%" }}
+                variant="primary"
+                type="submit"
+                onClick={handleOnSubmit}
+              >
                 Зарегистрироваться
               </Button>
             </Col>

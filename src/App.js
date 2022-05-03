@@ -8,6 +8,7 @@ import { Favorites } from "./Favorites";
 import { Login } from "./Login";
 import { Registration } from "./Registration";
 import { BookPage } from "./BookPage";
+import { Profile } from "./Profile";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/my-books" component={MyBooks} />
           <Route path="/favorites" component={Favorites} />
           <Route path="/login" component={Login} />
+          <Route path="/profile" component={Profile} />
           <Route path="/registration" component={Registration} />
           <Route path="/book" component={BookPage} />
         </Switch>
