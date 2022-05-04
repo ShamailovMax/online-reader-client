@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const style = {
-  width: "40vw",
+  width: "500px",
   textAlign: "center",
   justifyContent: "center",
 };

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export const Profile = () => {
   const [isloaded, setLoaded] = useState(false);
 
-  let profile_data = "";
+  let profile_data = ""; // пока не придумал для чего оно тут
 
   const [userName, setUserName] = useState("");
 
@@ -29,6 +29,7 @@ export const Profile = () => {
     return () => {};
   }, []);
 
+  // выход из аккаунта
   const handleOnExit = async (e) => {
     e.preventDefault();
     let result = await fetch("http://localhost:5000/unlogin", {
@@ -38,6 +39,7 @@ export const Profile = () => {
         "Content-Type": "application/json",
       },
     });
+
     result.text().then(function (result_text) {
       if (result_text === "user_not_login") {
         alert("User not login!");
@@ -57,9 +59,13 @@ export const Profile = () => {
         </Form.Text>
         <br />
         {userName ? (
-          <Button href="/login" onClick={handleOnExit}>
-            Выйти
-          </Button>
+          <>
+            <Button href="/login" onClick={handleOnExit}>
+              Выйти
+            </Button>
+            <h3>Мои книги</h3>
+            <h3>Предпочтения в жанрах</h3>
+          </>
         ) : (
           <a href="/login">Войти</a>
         )}

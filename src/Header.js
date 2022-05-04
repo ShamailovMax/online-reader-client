@@ -24,7 +24,7 @@ export const Header = () => {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="/profile">Мой профиль</Nav.Link>
+                  <Nav.Link href="/profile">Мой профиль</Nav.Link>
                   <Nav.Link href="/">Каталог</Nav.Link>
                   <Nav.Link href="/my-books">
                     Мои информационные материалы
