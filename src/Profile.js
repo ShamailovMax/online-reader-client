@@ -1,23 +1,28 @@
 import React from "react";
 import { Container, Button, Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Profile = () => {
   const [isloaded, setLoaded] = useState(false);
+
   let profile_data = "";
 
-  const [userName, setUserName] = useState('');
+  const [userName, setUserName] = useState("");
+
+  let navigate = useNavigate();
 
   useEffect(() => {
     if (!isloaded) {
-      fetch("http://localhost:5000/profile_data", {          
+      fetch("http://localhost:5000/profile_data", {
         method: "post",
       })
-      .then(function (response) {
-        return response.json()
-      }).then(data => {
-        setUserName(data.name)
-      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then((data) => {
+          setUserName(data.name);
+        });
 
       setLoaded(true);
     }
@@ -37,7 +42,7 @@ export const Profile = () => {
       if (result_text === "user_not_login") {
         alert("User not login!");
       } else if (result_text === "user_unlogin") {
-        alert("User unlogin!");
+        navigate("/login");
       } else {
         alert("Response:" + result_text);
       }
@@ -48,10 +53,16 @@ export const Profile = () => {
     <>
       <Container>
         <Form.Text id="textName" className="text-muted">
-          Ваш логин: {userName}
+          {userName ? `Ваш логин: ${userName}` : "Вы не авторизованы"}
         </Form.Text>
-        <br/>
-        <Button onClick={handleOnExit}>Выйти</Button>
+        <br />
+        {userName ? (
+          <Button href="/login" onClick={handleOnExit}>
+            Выйти
+          </Button>
+        ) : (
+          <a href="/login">Войти</a>
+        )}
       </Container>
     </>
   );

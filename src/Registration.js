@@ -1,5 +1,6 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   width: "40vw",
@@ -14,11 +15,15 @@ export const Registration = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [passwordRe, setPasswordRe] = useState("");
+
+  const navigate = useNavigate();
+
   const handleOnSubmit = async (e) => {
     if (password !== passwordRe) {
-      alert("Password dont равны");
+      alert("Подтвердите пароль корректно");
       return;
     }
+
     e.preventDefault();
     let result = await fetch("http://localhost:5000/register", {
       method: "post",
@@ -27,11 +32,13 @@ export const Registration = () => {
         "Content-Type": "application/json",
       },
     });
+
     result.text().then(function (result_text) {
       if (result_text === "reg_error") {
-        alert("User regeady register!");
+        alert("Пользователь с таким именем уже существует!");
       } else {
-        alert("User register!");
+        alert("Вы успешно зарегистрировались!");
+        navigate("/login");
       }
     });
   };
