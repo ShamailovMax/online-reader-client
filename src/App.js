@@ -1,18 +1,18 @@
 import React from "react";
 import "./App.css";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
-import { Home } from "./Home";
-import { MyBooks } from "./MyBooks";
-import { Favorites } from "./Favorites";
-import { Login } from "./Login";
-import { Registration } from "./Registration";
-import { BookPage } from "./BookPage";
-import { Profile } from "./Profile";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { Home } from "./pages/Home";
+import { MyBooks } from "./pages/MyBooks";
+import { Favorites } from "./pages/Favorites";
+import { Login } from "./pages/Login";
+import { Registration } from "./pages/Registration";
+import { BookPage } from "./pages/BookPage";
+import { Profile } from "./pages/Profile";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { About } from "./About";
+import { About } from "./pages/About";
 
 function App() {
   return (

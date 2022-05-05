@@ -1,6 +1,6 @@
 import React from "react";
 import { Accordion, Button, Container } from "react-bootstrap";
-import { faqData } from "./data/faqData";
+import { faqData } from "../data/faqData";
 
 const style = {
   width: "560px",

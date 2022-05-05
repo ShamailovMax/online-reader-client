@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
-import { Profile } from "./Profile";
+import { Profile } from "../pages/Profile";
 
 // шапка приложения, отображает боковое меню для навигации
 export const Header = () => {
