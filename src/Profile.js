@@ -3,14 +3,14 @@ import { Container, Button, Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-export const Profile = () => {
+export const Profile = (props) => {
   const [isloaded, setLoaded] = useState(false);
 
   let profile_data = ""; // пока не придумал для чего оно тут
 
   const [userName, setUserName] = useState("");
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!isloaded) {

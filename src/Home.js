@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Card, Container } from "react-bootstrap";
 
 export const Home = () => {
-  const [addedToFavorites, setAddedToFavorites] = useState(false);
+  // const [addedToFavorites, setAddedToFavorites] = useState(false);
+  // const addedToFavoritesHandler = () => setAddedToFavorites(!addedToFavorites);
 
   return (
     <>
       <Container>
         <h1>Каталог</h1>
-        <h4 style={{ color: '#636669' }}>Популярное</h4>
-        <Card style={{ width: "16rem", marginBottom: '1rem' }}>
+        <h4 style={{ color: "#636669" }}>Популярное</h4>
+        <Card style={{ width: "16rem", marginBottom: "1rem" }}>
           <Card.Body>
             <Card.Title>Война и Мир - Л. Н. Толстой</Card.Title>
             <Card.Text>Главный труд всей жизни Льва Николаевича</Card.Text>
@@ -17,17 +18,15 @@ export const Home = () => {
               <Button href="/book" variant="primary">
                 Перейти
               </Button>
-              <Button
+              {/* <Button
                 variant={!addedToFavorites ? "warning" : "danger"}
                 className="mt-1"
-                onClick={() => {
-                  setAddedToFavorites(!addedToFavorites);
-                }}
+                onClick={addedToFavoritesHandler}
               >
                 {!addedToFavorites
                   ? "Добавить в закладки"
                   : "Удалить из закладок"}
-              </Button>
+              </Button> */}
             </div>
           </Card.Body>
         </Card>

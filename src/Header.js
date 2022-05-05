@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { Profile } from "./Profile";
 
 // шапка приложения, отображает боковое меню для навигации
 export const Header = () => {
@@ -26,6 +27,7 @@ export const Header = () => {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link href="/profile">Мой профиль</Nav.Link>
                   <Nav.Link href="/">Каталог</Nav.Link>
+                  <Nav.Link href="/about">Информация</Nav.Link>
                   <Nav.Link href="/my-books">
                     Мои информационные материалы
                   </Nav.Link>

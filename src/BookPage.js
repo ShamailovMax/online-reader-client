@@ -15,7 +15,7 @@ export const BookPage = () => {
 
   return (
     <>
-      <div>
+      {/* <div>
         <div style={{ width: 1200 }}>
           <Document file="/lr4wad.pdf" onLoadSuccess={onDocumentLoadSuccess}>
             <Page pageNumber={pageNumber} width={1200} />
@@ -36,7 +36,7 @@ export const BookPage = () => {
             </Button>
           )}
         </nav>
-      </div>
+      </div> */}
       <div>
         <center>
           <div>

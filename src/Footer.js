@@ -1,12 +1,12 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 
 // просто футер
 export const Footer = () => {
   return (
     <Container
       fluid
-      style={{ backgroundColor: "#bfbfc9", color: "#fff", bottom: 0 }}
+      style={{ backgroundColor: "#bfbfc9", color: "#fff", bottom: 0, left: 0 }}
     >
       <Container
         style={{ display: "flex", justifyContent: "center", padding: "10px" }}
