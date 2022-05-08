@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { Button } from "react-bootstrap";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { ReadProgress } from "../components/ReadProgress/ReadProgress.js";
 
 export const BookPage = () => {
   const [numPages, setNumPages] = useState(null);
@@ -48,6 +49,7 @@ export const BookPage = () => {
           </div>
         </center>
       </div>
+      <ReadProgress />
     </>
   );
 };

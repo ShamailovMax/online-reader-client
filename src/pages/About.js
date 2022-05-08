@@ -17,7 +17,12 @@ export const About = () => {
           задаваемые вопросы
         </p>
       </div>
-      <Accordion defaultActiveKey="0" flush style={{ marginBottom: "1rem" }} alwaysOpen>
+      <Accordion
+        defaultActiveKey="0"
+        flush
+        style={{ marginBottom: "1rem" }}
+        alwaysOpen
+      >
         {faqData.map((faq) => {
           return (
             <Accordion.Item key={faq.id} eventKey={faq.id}>
