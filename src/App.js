@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -15,6 +15,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { About } from "./pages/About";
 
 function App() {
+  // const [searchValue, setSearchValue] = useState("");
+  // поиск информационных материалов
+  // const onChangeSearchInput = (event) => {
+  //   setSearchValue(event.target.value);
+  // };
+
   return (
     <>
       <BrowserRouter>
