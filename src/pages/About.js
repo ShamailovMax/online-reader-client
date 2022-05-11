@@ -32,7 +32,7 @@ export const About = () => {
           );
         })}
       </Accordion>
-      <Button href="/">На главную &rArr;</Button>
+      <Button href="/">На главную</Button>
     </Container>
   );
 };

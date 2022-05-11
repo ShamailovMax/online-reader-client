@@ -1,13 +1,18 @@
-import React, { useEffect, useState, useContext } from "react";
+import React from "react";
 import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
-import { Profile } from "../pages/Profile";
 
 // шапка приложения, отображает боковое меню для навигации
 export const Header = () => {
   return (
     <>
       {["xxl"].map((expand) => (
-        <Navbar key={expand} bg="light" expand={expand} className="mb-3">
+        <Navbar
+          key={expand}
+          bg="light"
+          expand={expand}
+          className="mb-3"
+          sticky="top"
+        >
           <Container fluid>
             <Navbar.Brand href="/">
               Веб-сервис поиска и просмотра информационных материалов

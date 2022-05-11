@@ -1,43 +1,20 @@
 import React, { useState } from "react";
 
-import { Button } from "react-bootstrap";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import { ReadProgress } from "../components/ReadProgress/ReadProgress.js";
 
 export const BookPage = () => {
   const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
+
   const onDocumentLoadSuccess = ({ numPages }) => setNumPages(numPages);
-  const goToPrevPage = () => setPageNumber(pageNumber - 1);
-  const goToNextPage = () => setPageNumber(pageNumber + 1);
+
+  // * тут будет метод для получения книги и отображения на экран
 
   // todo: предоставить возможность выбора способа рендеринга
   // todo: сделать удобную gui/таблицу для выполнения действий на этой странице
 
   return (
     <>
-      {/* <div>
-        <div style={{ width: 1200 }}>
-          <Document file="/lr4wad.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-            <Page pageNumber={pageNumber} width={1200} />
-          </Document>
-          <p>
-            Page {pageNumber} of {numPages}
-          </p>
-        </div>
-        <nav>
-          {pageNumber > 1 && (
-            <Button className="me-1" variant="dark" onClick={goToPrevPage}>
-              &lt;
-            </Button>
-          )}
-          {pageNumber < numPages && (
-            <Button variant="dark" onClick={goToNextPage}>
-              &gt;
-            </Button>
-          )}
-        </nav>
-      </div> */}
       <div>
         <center>
           <div>
