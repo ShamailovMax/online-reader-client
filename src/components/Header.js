@@ -1,5 +1,12 @@
 import React from "react";
-import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import {
+  Container,
+  Nav,
+  Navbar,
+  Offcanvas,
+  Dropdown,
+  NavDropdown,
+} from "react-bootstrap";
 
 // шапка приложения, отображает боковое меню для навигации
 export const Header = () => {
@@ -36,6 +43,21 @@ export const Header = () => {
                   <Nav.Link href="/my-books">
                     Мои информационные материалы
                   </Nav.Link>
+                  <NavDropdown
+                    id="nav-dropdown-light-example"
+                    title="Категории"
+                    menuVariant="light"
+                  >
+                    <NavDropdown.Item href="#action/3.1">
+                      Научная литература
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.2">
+                      Художественная литература
+                    </NavDropdown.Item>
+                    <NavDropdown.Item href="#action/3.3">
+                      Короткие рассказы
+                    </NavDropdown.Item>
+                  </NavDropdown>
                   <Nav.Link href="/favorites">Список желаемого</Nav.Link>
                   <Nav.Link href="/login">Войти</Nav.Link>
                 </Nav>

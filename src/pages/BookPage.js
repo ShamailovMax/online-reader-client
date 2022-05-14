@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ReadProgress } from "../components/ReadProgress/ReadProgress.js";
 
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 
 export const BookPage = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -38,10 +38,10 @@ export const BookPage = () => {
   useEffect(() => {
     if (!isloaded) {
       getPage();
-      setLoaded(true);
+      // setLoaded(true);
     }
     return () => {};
-  }, [getPage, setLoaded]);
+  });
 
   const getPage = () => {
     let name = window.location.href
@@ -67,15 +67,24 @@ export const BookPage = () => {
 
   return (
     <>
-      <div>
+      <Container className="book-info">
+        <h2>Название книги</h2>
+        <div className="book-info__description">
+          <p>Описание книги</p>
+          <span>4 стр.</span>
+        </div>
         <Button variant="success" type="submit" onClick={handleGetBook}>
           Прочитать книгу
         </Button>
-        <Button onClick={handleDecrementPage}>назад</Button>
-        Страница {pageNumber}
-        <Button onClick={handleIncrimentPage}>вперед</Button>
+        <br />
+        {pageNumber > 1 && <Button onClick={handleDecrementPage}>назад</Button>}
+        <span> Страница {pageNumber} </span>
+        {pageNumber < maxPage && (
+          <Button onClick={handleIncrimentPage}>вперед</Button>
+        )}
+        <br />
         {text}
-      </div>
+      </Container>
       <ReadProgress />
     </>
   );

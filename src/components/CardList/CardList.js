@@ -8,8 +8,6 @@ export const CardList = () => {
     <Container className={style.cardList}>
       <CardItem />
       <CardItem />
-      <CardItem />
-      <CardItem />
     </Container>
   );
 };
