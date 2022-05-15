@@ -63,8 +63,25 @@ export const Profile = (props) => {
             <Button href="/login" onClick={handleOnExit}>
               Выйти
             </Button>
-            <h3>Мои книги</h3>
-            <h3>Предпочтения в жанрах</h3>
+            <div className="mt-3">
+              <h3>Информация об аккаунте</h3>
+              <h4 style={{ color: "#515955" }}>
+                Имя пользователя:{" "}
+                <span
+                  style={{
+                    backgroundColor: "#BBE5D7",
+                    color: "#3D3E84",
+                    padding: "0 6px",
+                    borderRadius: "5px",
+                  }}
+                >
+                  {userName ? `${userName}` : "Вы не авторизованы"}
+                </span>
+              </h4>
+            </div>
+            <div className="mt-3 mb-5">
+              <h3>Мои книги</h3>
+            </div>
           </>
         ) : (
           <a href="/login">Войти</a>
