@@ -1,3 +1,14 @@
 .cardList {
   display: flex;
 }
+.addBtn {
+  background-color: #fff;
+  color: rgb(111, 111, 111);
+  border: none;
+  margin-left: 10px;
+  border-radius: 50px;
+}
+.addBtn:hover {
+  color: rgb(105, 105, 105);
+  background-color: rgb(219, 219, 219);
+}

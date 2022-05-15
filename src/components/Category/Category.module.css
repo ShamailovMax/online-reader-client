@@ -20,3 +20,6 @@
   color: rgb(255, 255, 255);
   box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.2);
 }
+.categoryCard:active {
+  box-shadow: none;
+}
