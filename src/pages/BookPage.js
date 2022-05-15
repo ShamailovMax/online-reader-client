@@ -71,14 +71,14 @@ export const BookPage = () => {
         <h2>Название книги</h2>
         <div className="book-info__description">
           <p>Описание книги</p>
-          <span>4 стр.</span>
+          <span>{maxPage} стр.</span>
         </div>
         <Button variant="success" type="submit" onClick={handleGetBook}>
           Прочитать книгу
         </Button>
         <br />
         {pageNumber > 1 && <Button onClick={handleDecrementPage}>назад</Button>}
-        <span> Страница {pageNumber} </span>
+        <span><b> Страница {pageNumber} из {maxPage} </b></span>
         {pageNumber < maxPage && (
           <Button onClick={handleIncrimentPage}>вперед</Button>
         )}

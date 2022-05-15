@@ -57,8 +57,12 @@ export const Header = () => {
                     <NavDropdown.Item href="#action/3.3">
                       Короткие рассказы
                     </NavDropdown.Item>
+                    <NavDropdown.Divider />
+                    <NavDropdown.Item href="/categories">
+                      Все категории
+                    </NavDropdown.Item>
                   </NavDropdown>
-                  <Nav.Link href="/favorites">Список желаемого</Nav.Link>
+
                   <Nav.Link href="/login">Войти</Nav.Link>
                 </Nav>
               </Offcanvas.Body>

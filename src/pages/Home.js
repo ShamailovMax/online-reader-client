@@ -14,7 +14,11 @@ export const Home = () => {
             <Form.Control type='text' placeholder='Поиск...' style={{ width: '30vw' }} />
           </Col>
         </Row>
-        <h4 style={{ color: "#636669" }}>Популярное</h4>
+        <Row>
+          <Col><h4 style={{ color: "#636669" }}>Популярное</h4></Col>
+          <Col><a href='/categories'>В категории</a></Col>
+        </Row>
+        
         <CardList />
       </Container>
     </>
