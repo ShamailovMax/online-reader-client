@@ -1,28 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+
 import { FreeCategory } from "../components/Category/FreeCategory";
-import { categoriesData } from "../data/categoriesData";
+import { ScienceCategory } from "../components/Category/ScienceCategory";
 
 export const Categories = () => {
-  // const [categories, setCategories] = useState("");
-  // useEffect(() => {
-  //   fetch("http://localhost:5000/book?category=cat", { method: "get" })
-  //     .then((res) => res.json())
-  //     .then((data) => setCategories(data.category));
-  // });
-
   return (
     <>
       <Container>
         <h1>Категории</h1>
         <Row>
           <Col>
-            {/* {categoriesData.map((category) => (
-              <Category
-                key={category.id}
-                categoryTitleText={category.categoryTitleText}
-              />
-            ))} */}
+            <ScienceCategory />
             <FreeCategory />
           </Col>
           <Col xs={8} style={{ fontSize: "20px", width: "40vw" }}>

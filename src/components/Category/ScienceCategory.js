@@ -3,12 +3,14 @@ import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import style from "./Category.module.css";
 
-export const FreeCategory = () => {
+export const ScienceCategory = () => {
   const navigate = useNavigate();
-  const [categoryName, setCategoryName] = useState("");
 
+  const [categoryName, setCategoryName] = useState("");
   useEffect(() => {
-    fetch("http://localhost:5000/book?category=Бесплатно", { method: "get" })
+    fetch("http://localhost:5000/book?category=Научная литература", {
+      method: "get",
+    })
       .then((res) => res.json())
       .then((data) => setCategoryName(data.category));
   });
@@ -18,10 +20,10 @@ export const FreeCategory = () => {
       <Card className={style.categoryCard}>
         <Card.Body
           onClick={() => {
-            navigate("/categories/free");
+            navigate("/categories/science");
           }}
         >
-          <Card.Title>Бесплатно</Card.Title>
+          <Card.Title>Научная литература</Card.Title>
         </Card.Body>
       </Card>
     </>

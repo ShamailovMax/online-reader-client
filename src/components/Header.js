@@ -4,7 +4,6 @@ import {
   Nav,
   Navbar,
   Offcanvas,
-  Dropdown,
   NavDropdown,
 } from "react-bootstrap";
 
@@ -40,15 +39,12 @@ export const Header = () => {
                   <Nav.Link href="/profile">Мой профиль</Nav.Link>
                   <Nav.Link href="/">Каталог</Nav.Link>
                   <Nav.Link href="/about">Информация</Nav.Link>
-                  <Nav.Link href="/my-books">
-                    Мои информационные материалы
-                  </Nav.Link>
                   <NavDropdown
                     id="nav-dropdown-light-example"
                     title="Категории"
                     menuVariant="light"
                   >
-                    <NavDropdown.Item href="#action/3.1">
+                    <NavDropdown.Item href="/categories/science">
                       Научная литература
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">
@@ -62,7 +58,6 @@ export const Header = () => {
                       Все категории
                     </NavDropdown.Item>
                   </NavDropdown>
-
                   <Nav.Link href="/login">Войти</Nav.Link>
                 </Nav>
               </Offcanvas.Body>

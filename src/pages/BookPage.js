@@ -67,7 +67,7 @@ export const BookPage = () => {
 
   return (
     <>
-      <Container className="book-info">
+      <Container className="book-info" style={{ width: "65vw" }}>
         <h2>Название книги</h2>
         <div className="book-info__description">
           <p>Описание книги</p>
@@ -77,8 +77,14 @@ export const BookPage = () => {
           Прочитать книгу
         </Button>
         <br />
+        <br />
         {pageNumber > 1 && <Button onClick={handleDecrementPage}>назад</Button>}
-        <span><b> Страница {pageNumber} из {maxPage} </b></span>
+        <span>
+          <b>
+            {" "}
+            Страница {pageNumber} из {maxPage}{" "}
+          </b>
+        </span>
         {pageNumber < maxPage && (
           <Button onClick={handleIncrimentPage}>вперед</Button>
         )}

@@ -1,5 +1,6 @@
 .cardList {
   display: flex;
+  cursor: pointer;
 }
 .addBtn {
   background-color: #fff;
