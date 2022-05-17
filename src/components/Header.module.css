@@ -1,0 +1,17 @@
+.toPublicateButton {
+  width: 120px;
+  height: 45px;
+  margin-top: 10%;
+  background-color: rgb(131, 237, 140);
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.toPublicateButton:hover {
+  background-position: right center;
+  color: rgb(255, 255, 255);
+  transition: 0.5s;
+  box-shadow: 0px 0px 20px 4px rgba(30, 193, 11, 0.2);
+}

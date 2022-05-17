@@ -6,6 +6,7 @@ import {
   Offcanvas,
   NavDropdown,
 } from "react-bootstrap";
+import style from './Header.module.css'
 
 // шапка приложения, отображает боковое меню для навигации
 export const Header = () => {
@@ -59,6 +60,7 @@ export const Header = () => {
                     </NavDropdown.Item>
                   </NavDropdown>
                   <Nav.Link href="/login">Войти</Nav.Link>
+                  <Nav.Link className={style.toPublicateButton} href='/publicate'>Опубликовать!</Nav.Link>
                 </Nav>
               </Offcanvas.Body>
             </Navbar.Offcanvas>

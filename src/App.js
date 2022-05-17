@@ -14,6 +14,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FreeCategoryPage } from "./pages/FreeCategoryPage";
 import {ScienceCategoryPage} from "./pages/ScienceCategoryPage";
+import { AddBookForm } from "./pages/AddBookForm/AddBookForm";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories/free" element={<FreeCategoryPage />} />
           <Route path="/categories/science" element={<ScienceCategoryPage />} />
+          <Route path='/publicate' element={<AddBookForm />} />
         </Routes>
       </BrowserRouter>
       <Footer />
