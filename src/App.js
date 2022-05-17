@@ -15,6 +15,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FreeCategoryPage } from "./pages/FreeCategoryPage";
 import {ScienceCategoryPage} from "./pages/ScienceCategoryPage";
 import { AddBookForm } from "./pages/AddBookForm/AddBookForm";
+import { Slider } from "./components/Slider/Slider";
 
 function App() {
   return (
